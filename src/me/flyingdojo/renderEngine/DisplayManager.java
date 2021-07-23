@@ -5,6 +5,7 @@ import org.lwjgl.opengl.ContextAttribs;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.PixelFormat;
 
 public class DisplayManager {
 	private static final int WIDTH = 1280;
@@ -18,6 +19,7 @@ public class DisplayManager {
 		
 		try {
 			Display.setDisplayMode(new DisplayMode(WIDTH, HEIGHT)); // Set display width and height
+			Display.create(new PixelFormat(), attribs); // Create OpenGL Context
 		} catch (LWJGLException e) {
 			e.printStackTrace();
 		}
